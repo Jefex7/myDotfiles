@@ -1,0 +1,91 @@
+{
+	"name": "debug-leetcode",
+	"displayName": "Debug LeetCode",
+	"description": "Solve LeetCode problems in VS Code and enjoy debugging",
+	"version": "0.2.3",
+	"author": "wangtao0101",
+	"publisher": "wangtao0101",
+	"license": "MIT",
+	"icon": "resources/LeetCode.png",
+	"engines": {
+		"vscode": "^1.42.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wangtao0101/vscode-debug-leetcode"
+	},
+	"homepage": "https://github.com/wangtao0101/vscode-debug-leetcode/blob/master/README.md",
+	"categories": [
+		"Other",
+		"Snippets"
+	],
+	"keywords": [
+		"leetcode",
+		"algorithm",
+		"interview"
+	],
+	"preview": true,
+	"activationEvents": [
+		"onLanguage:javascriptreact",
+		"onLanguage:javascript",
+		"onLanguage:python",
+		"onLanguage:cpp"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "debug-leetcode.debugSolution",
+				"title": "Debug LeetCode",
+				"category": "Debug-LeetCode"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "debug-leetcode configuration",
+			"properties": {
+				"debug-leetcode.miDebuggerPath": {
+					"type": "string",
+					"default": "",
+					"description": "gdb absolute path.",
+					"scope": "resource"
+				},
+				"debug-leetcode.cppCompiler": {
+					"type": "string",
+					"default": "gdb",
+					"enum": [
+						"gdb",
+						"clang"
+					],
+					"enumDescriptions": [
+						"gdb compiler",
+						"clang compiler"
+					],
+					"scope": "resource"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"format": "prettier --write \"src/**/*.ts\""
+	},
+	"devDependencies": {
+		"@types/fs-extra": "5.0.0",
+		"@types/node": "^7.0.43",
+		"@types/vscode": "1.42.0",
+		"prettier": "^2.0.3",
+		"typescript": "^3.8.0"
+	},
+	"dependencies": {
+		"fs-extra": "^6.0.1"
+	},
+	"__metadata": {
+		"id": "b3764a0b-9024-4cae-ab52-a726f3b4c76a",
+		"publisherId": "54405f5c-7c88-4a0e-b95d-133875e3e755",
+		"publisherDisplayName": "wangtao0101",
+		"installedTimestamp": 1638970257661
+	}
+}
